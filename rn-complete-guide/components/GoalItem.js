@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   StyleSheet, Text, View, TouchableOpacity,
 } from 'react-native';
@@ -13,7 +13,6 @@ const GoalInput = ({ title, onDelete, id }) => (
 const styles = StyleSheet.create({
   listItem: {
     padding: 10,
-    // backgroundColor: '#ccc',
     borderBottomColor: 'black',
     borderBottomWidth: 1,
   },

@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
-  StyleSheet, Text, View, ScrollView, Alert, FlatList,
+  StyleSheet,
+  Text, View,
+  Alert,
+  FlatList,
+  Dimensions,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -58,7 +62,6 @@ const GameScreen = (props) => {
     }
     const nextNumber = generateRandomBetween(currentLow.current, currentHigh.current, currentGuess);
     setCurrentGuess(nextNumber);
-    // setRounds((currentRounds) => currentRounds + 1);
     setPastGuesses((curPastGuesses) => [nextNumber.toString(), ...curPastGuesses]);
   };
 
@@ -75,12 +78,6 @@ const GameScreen = (props) => {
         </MainButton>
       </Card>
       <View style={styles.listContainer}>
-        {/* <ScrollView contentContainerStyle={styles.list}>
-          {
-            pastGuesses.map((guess, index) => renderListItem(guess, pastGuesses.length - index))
-          }
-        </ScrollView> */}
-
         <FlatList
           keyExtractor={(item) => item}
           data={pastGuesses}
@@ -101,13 +98,13 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: 20,
+    marginTop: Dimensions.get('window').height > 600 ? 20 : 10,
     width: 400,
     maxWidth: '80%',
   },
   listContainer: {
     flex: 1,
-    width: '60%',
+    width: Dimensions.get('window').width > 350 ? '60%' : '80%',
   },
   list: {
     flexGrow: 1,

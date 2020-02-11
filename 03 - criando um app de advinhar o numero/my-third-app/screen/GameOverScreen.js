@@ -6,6 +6,7 @@ import {
   ScrollView,
   Image,
   Dimensions,
+  SafeAreaView,
 } from 'react-native';
 
 import TitleText from '../components/TitleText';

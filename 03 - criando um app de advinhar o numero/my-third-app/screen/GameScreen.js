@@ -9,7 +9,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { ScreenOrientation } from 'expo';
 
-import MainButton from '../components/MainButton';
+import MainButton from '../components/MainButton.android';
 import NumberContainer from '../components/NumberContainer';
 import BodyText from '../components/BodyText';
 

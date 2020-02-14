@@ -15,17 +15,26 @@ const MealsNavigator = createStackNavigator({
     screen: CategoriesScreen,
     navigationOptions: {
       title: 'Meal Categories',
-      headerTintColor: Colors.fontsPrimaryColor,
-      headerStyle: {
-        backgroundColor: Colors.primaryColor,
-      },
     },
   },
   CategoryMeals: {
     screen: CategoryMealsScreen,
+    navigationOptions: {
+      title: 'Category Meals',
+    },
   },
   MealDetail: {
     screen: MealDetailScreen,
+    navigationOptions: {
+      title: 'Meal Detail',
+    },
+  },
+}, {
+  defaultNavigationOptions: {
+    headerTintColor: Colors.fontsPrimaryColor,
+    headerStyle: {
+      backgroundColor: Colors.primaryColor,
+    },
   },
 });
 

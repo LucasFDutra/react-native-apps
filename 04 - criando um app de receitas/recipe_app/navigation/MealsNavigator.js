@@ -8,10 +8,18 @@ import CategoryMealsScreen from '../screens/CategoryMealsScreen';
 // import FavoritesScreen from '../screens/FavoritesScreen';
 // import FiltersScreen from '../screens/FiltersScreen';
 import MealDetailScreen from '../screens/MealDetailScreen';
+import Colors from '../constants/Color';
 
 const MealsNavigator = createStackNavigator({
   Categories: {
     screen: CategoriesScreen,
+    navigationOptions: {
+      title: 'Meal Categories',
+      headerTintColor: Colors.fontsPrimaryColor,
+      headerStyle: {
+        backgroundColor: Colors.primaryColor,
+      },
+    },
   },
   CategoryMeals: {
     screen: CategoryMealsScreen,

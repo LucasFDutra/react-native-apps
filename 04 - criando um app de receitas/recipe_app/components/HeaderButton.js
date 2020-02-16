@@ -1,31 +1,16 @@
 import React from 'react';
-// import { HeaderButton } from 'react-navigation-header-buttons';
-import {
-  View, Text, TouchableOpacity, StyleSheet,
-} from 'react-native';
+import { HeaderButton } from 'react-navigation-header-buttons';
+import { Ionicons } from '@expo/vector-icons';
 
 import Colors from '../constants/Color';
 
 const CustomHeaderButton = (props) => (
-  <TouchableOpacity onPress={props.onPress}>
-    <View style={styles.button}>
-      <Text style={styles.buttonText}>{props.children}</Text>
-    </View>
-  </TouchableOpacity>
+  <HeaderButton
+    {...props}
+    IconComponent={Ionicons}
+    iconSize={23}
+    color='white'
+  />
 );
-
-const styles = StyleSheet.create({
-  button: {
-    backgroundColor: Colors.accentColor,
-    paddingVertical: 12,
-    paddingHorizontal: 30,
-    borderRadius: 25,
-    marginRight: 10,
-  },
-  buttonText: {
-    color: 'white',
-  },
-});
-
 
 export default CustomHeaderButton;

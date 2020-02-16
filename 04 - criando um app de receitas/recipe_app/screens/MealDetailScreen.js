@@ -1,46 +1,54 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  StyleSheet, Text, View, Button,
+} from 'react-native';
 // import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 // import { Ionicons } from '@expo/vector-icons';
 
 import { MEALS } from '../data/dummy-data';
-import HeaderButton from '../components/HeaderButton';
+// import HeaderButton from '../components/HeaderButton';
 
 const MealDetailScreen = (props) => {
+  // props.navigation.navigationOptions({
+  //   headerRight: () => (
+  //     <Button
+  //       onPress={() => { console.log('aqui'); }}
+  //       title='Update count'
+  //     />
+  //   ),
+  // });
+
   const mealId = props.navigation.getParam('mealId');
 
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
 
   return (
     <View style={styles.screen}>
-      <HeaderButton style={styles.favoritButton} onPress={() => { console.log('aqui'); }}>
-        <Text>favorito</Text>
-      </HeaderButton>
+
+      <Text>dçlsalfjksdlçfjçsa</Text>
     </View>
   );
 };
 
-// MealDetailScreen.navigationOptions = (navigationData) => {
-//   const mealId = navigationData.navigation.getParam('mealId');
-//   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
+// MealDetailScreen.navigationOptions = (navigationData) => ({
+//   headerRight: () => (
+//     <Button onPress={() => { console.log('aqui'); }} title='fav' color='#fff' />
+//   ),
+// });
 
-//   return {
-//     headerTitle: selectedMeal.title,
-//     headerRight: () => (
 
-//     ),
-//   };
-// };
+// function HomeScreen({ navigation }) {
+//   const [count, setCount] = React.useState(0);
+
+
+//   return <Text>Count: {count}</Text>;
+// }
 
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-end',
-  },
-  favoritButton: {
-    marginTop: 10,
-    marginRight: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

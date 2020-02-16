@@ -8,7 +8,7 @@ import Colors from '../constants/Color';
 
 const CustomHeaderButton = (props) => (
   <TouchableOpacity onPress={props.onPress}>
-    <View style={{ ...styles.button, ...props.style }}>
+    <View style={styles.button}>
       <Text style={styles.buttonText}>{props.children}</Text>
     </View>
   </TouchableOpacity>

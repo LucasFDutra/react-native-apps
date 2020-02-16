@@ -33,13 +33,8 @@ const MealsNavigator = createStackNavigator({
     navigationOptions: {
       title: 'Meal Detail',
       headerRight: () => (
-        // <Button
-        //   onPress={() => { console.log('aqui'); }}
-        //   title='fav'
-        // />
-        <HeaderButton>
-          <Ionicons name='md-remove' size={24} color='white' />
-          {/* <Text>ola</Text> */}
+        <HeaderButton onPress={() => { console.log('aqui'); }}>
+          <Text>Favorito</Text>
         </HeaderButton>
       ),
     },

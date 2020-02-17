@@ -18,6 +18,12 @@ const defaultStackNavOptions = {
   headerStyle: {
     backgroundColor: Colors.primaryColor,
   },
+  // headerTitleStyle: {
+  //   fontFamily: '...',
+  // },
+  // headerBackTitleStyle: {
+  //   fontFamily: '...',
+  // },
 };
 
 const MealsNavigator = createStackNavigator({
@@ -109,6 +115,13 @@ const MainNavigation = createDrawerNavigator({
   },
   Filters: {
     screen: FilterNavigator,
+  },
+}, {
+  contentOptions: {
+    activeTintColor: Colors.accentColor,
+    labelStyle: {
+      fontSize: 15,
+    },
   },
 });
 

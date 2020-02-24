@@ -6,12 +6,19 @@ import {
   FlatList,
 } from 'react-native';
 import { useSelector } from 'react-redux';
+import ProductItem from '../../components/shop/ProductItem';
 
 const ProductsOverviewScreen = (props) => {
   const products = useSelector((state) => (state.products.availableProducts));
 
   const renderFunction = (itemData) => (
-    <Text>{itemData.item.title}</Text>
+    <ProductItem
+      image={itemData.item.imageUrl}
+      title={itemData.item.title}
+      price={itemData.item.price}
+      onViewDetail={() => { }}
+      onAddToCart={() => { }}
+    />
   );
   return (
     <View>
@@ -25,6 +32,9 @@ const ProductsOverviewScreen = (props) => {
   );
 };
 
+ProductsOverviewScreen.navigationOptions = (navData) => ({
+  headerTitle: 'All Products',
+});
 const styles = StyleSheet.create({
 
 });

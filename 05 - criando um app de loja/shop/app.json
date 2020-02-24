@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "store",
-    "slug": "store",
+    "name": "shop",
+    "slug": "shop",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [

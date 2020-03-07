@@ -5,28 +5,36 @@ import {
   View,
   Image,
   Button,
+  TouchableOpacity,
+  TouchableNativeFeedback,
+  Platform,
 } from 'react-native';
 import Colors from '../../constants/Colors';
 
-const ProductItem = (props) => (
-  <View style={styles.product}>
-    <View style={styles.imageContainer}>
-      <Image source={{ uri: props.image }} style={styles.image} />
-    </View>
-    <View style={styles.details}>
-      <Text style={styles.title}>{props.title}</Text>
-      <Text style={styles.price}>
-        $
-        {props.price.toFixed(2)}
-      </Text>
-    </View>
+const ProductItem = (props) => {
+  const TouchableCmp = (Platform.OS === 'android' && Platform.Version >= 21) ? TouchableNativeFeedback : TouchableOpacity;
+  return (
+    <TouchableCmp onPress={props.onViewDetail} useForeground>
+      <View style={styles.product}>
+        <View style={styles.imageContainer}>
+          <Image source={{ uri: props.image }} style={styles.image} />
+        </View>
+        <View style={styles.details}>
+          <Text style={styles.title}>{props.title}</Text>
+          <Text style={styles.price}>
+            $
+            {props.price.toFixed(2)}
+          </Text>
+        </View>
 
-    <View style={styles.actions}>
-      <Button color={Colors.primary} title='View Details' onPress={props.onViewDetail} />
-      <Button color={Colors.primary} title='To Cart' onPress={props.onAddToCart} />
-    </View>
-  </View>
-);
+        <View style={styles.actions}>
+          <Button color={Colors.primary} title='View Details' onPress={props.onViewDetail} />
+          <Button color={Colors.primary} title='To Cart' onPress={props.onAddToCart} />
+        </View>
+      </View>
+    </TouchableCmp>
+  );
+};
 
 const styles = StyleSheet.create({
   product: {
@@ -39,6 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     height: 300,
     margin: 20,
+    overflow: 'hidden',
   },
   image: {
     width: '100%',
@@ -53,10 +62,12 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    marginVertical: 4,
+    fontFamily: 'open-sans-bold',
+    marginVertical: 2,
   },
   price: {
     fontSize: 14,
+    fontFamily: 'open-sans-bold',
     color: '#888',
   },
   actions: {
@@ -67,6 +78,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   details: {
+    fontFamily: 'open-sans',
     alignItems: 'center',
     height: '15%',
     padding: 10,

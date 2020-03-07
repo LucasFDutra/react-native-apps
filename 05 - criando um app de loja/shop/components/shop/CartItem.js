@@ -14,7 +14,7 @@ const CartItem = (props) =>
     <View style={styles.cartItem}>
       <View style={styles.itemData}>
         <Text style={styles.quantity}>
-          {props.quatity}
+          {props.quantity}
           {' '}
         </Text>
         <Text style={styles.mainText}>{props.title}</Text>
